@@ -6,18 +6,52 @@
 
 /* Main container for the entire application */
 .todos {
-    font-family: sans-serif;
+    font-family: "Inter", sans-serif; /* Recommended to use your new font */
     max-width: 600px;
-    margin: 2rem auto;
+    margin: auto;
+    margin-top: 20px;
     padding: 1.5rem;
-    background-color: #1a1b26; /* Dark background */
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    background-color: #1a1b26;
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* This specific rule from the old file is still needed here for layout */
+/* The container for the list of todo items */
 .todos > .todosItems {
+    padding-top: 5px;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+/* ---------------------------------- */
+/*      FIX 2: Custom Scrollbar      */
+/* ---------------------------------- */
+
+/* Target the scrollbar within the .todosItems container */
+.todos > .todosItems::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Style the "track" (the background the scrollbar moves along) */
+.todos > .todosItems::-webkit-scrollbar-track {
+    background: #2a2c37; /* A color that matches your item background */
+    border-radius: 4px;
+}
+
+/* Style the "thumb" (the draggable part of the scrollbar) */
+.todos > .todosItems::-webkit-scrollbar-thumb {
+    background-color: #44475a; /* A slightly lighter, contrasting color */
+    border-radius: 4px;
+    border: 2px solid #2a2c37; /* Creates a nice padding effect */
+}
+
+/* Style the thumb on hover for better user feedback */
+.todos > .todosItems::-webkit-scrollbar-thumb:hover {
+    background-color: #5c5f72; /* Make it lighter on hover */
 }
