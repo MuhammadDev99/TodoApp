@@ -5,7 +5,48 @@
 .todosControls {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.4rem;
+}
+.bottomTodosControls > .removeAllTodos {
+    background: transparent;
+    border: none;
+    color: rgb(118, 70, 70);
+    /* margin-left: auto; */
+    cursor: pointer;
+    font-weight: bold;
+}
+.bottomTodosControls > .removeAllTodos:hover {
+    color: rgb(185, 103, 103);
+}
+.bottomTodosControls {
+    display: flex;
+    flex-direction: row;
+    height: 1.75rem;
+    margin-bottom: 1rem;
+    gap: 10px;
+}
+.bottomTodosControls > .filter {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.bottomTodosControls p {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: rgb(211, 211, 211);
+}
+.remainingTodosCount {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-left: auto;
+}
+.remainingTodosCount > .number {
+    font-weight: bold;
 }
 
 .todosControls > .todosInput {
@@ -58,4 +99,44 @@
 .todosControls > .removeAllTodos:hover {
     background-color: #ff5b5b;
     color: white;
+}
+
+.filterSelect {
+    /* Style it to look like your other inputs */
+    background-color: #2a2c37;
+    color: #e0e0e0;
+    border: 2px solid #44475a;
+    border-radius: 6px;
+    padding: 0.25rem 2rem 0.25rem 0.75rem; /* Extra padding on the right for the arrow */
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    /* --- 2. Hide the Default Browser Arrow --- */
+    appearance: none;
+    -webkit-appearance: none; /* For Safari/Chrome */
+    -moz-appearance: none; /* For Firefox */
+
+    /* --- 3. Add a Custom Arrow using a Background SVG --- */
+    /* This is a URL-encoded SVG for a downward-pointing chevron */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237a7a8c'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.2em;
+}
+
+/* --- 4. Focus and Hover States --- */
+.filterSelect:hover {
+    border-color: #5c5f72;
+}
+
+.filterSelect:focus {
+    outline: none;
+    border-color: #8a6bff; /* Same focus color as your input */
+}
+
+/* --- 5. Style the Dropdown Options --- */
+.filterSelect option {
+    background-color: #1a1b26; /* Dark background for the dropdown menu */
+    color: #e0e0e0;
 }

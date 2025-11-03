@@ -3,3 +3,4 @@ export interface Todo {
     completed: boolean
     id: number
 }
+export type TodosFilter = "Completed" | "InProgress" | "All"
