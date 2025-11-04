@@ -1,73 +1,85 @@
-# React + TypeScript + Vite
+# Modern Todo App - React & TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, modern, and feature-rich Todo application built with React, TypeScript, and powered by Preact/Signals for efficient state management. The entire application is styled with pure CSS, featuring a dark theme, custom form elements, and smooth transitions.
 
-Currently, two official plugins are available:
+ <!-- It's recommended to replace this with a screenshot of your actual running application -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+*   **Full CRUD Functionality**: Create, read, update, and delete your todos with ease.
+*   **Reactive State Management**: Uses `@preact/signals-react` for a fast and intuitive state management experience.
+*   **Persistent Storage**: Todos are automatically saved to the browser's Local Storage, so you never lose your tasks.
+*   **Inline Editing**: Double-click or use the edit button to update a todo's content directly in the list.
+*   **Task Filtering**: Dynamically filter tasks by "All", "In Progress", or "Completed" status.
+*   **Modern Dark UI**: A visually appealing dark theme designed to be easy on the eyes.
+*   **Custom Styling**: Includes custom-styled checkboxes, select dropdowns, and scrollbars for a cohesive look and feel.
+*   **Remaining Task Count**: A live counter shows how many tasks are yet to be completed.
+*   **Type-Safe**: Built with TypeScript for a robust and error-free development experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Technologies Used
 
-## Expanding the ESLint configuration
+*   **Frontend**: [React](https://reactjs.org/)
+*   **Language**: [TypeScript](https://www.typescriptlang.org/)
+*   **State Management**: [Preact/Signals](https://preactjs.com/guide/v10/signals/)
+*   **Styling**: Pure CSS with modern features (Flexbox, custom properties)
+*   **Build Tool**: Vite (inferred, standard for this setup)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+You need to have [Node.js](https://nodejs.org/) (which includes npm) installed on your computer.
+
+*   **npm**
+    ```sh
+    npm install npm@latest -g
+    ```
+
+### Installation
+
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/your-username/your-repo-name.git
+    ```
+2.  **Navigate to the project directory:**
+    ```sh
+    cd your-repo-name
+    ```
+3.  **Install the dependencies:**
+    ```sh
+    npm install
+    ```
+
+### Running the Application
+
+Once the dependencies are installed, you can run the development server:
+
+```sh
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will start the Vite development server, and you can view the application by navigating to `http://localhost:5173/` (or the address shown in your terminal).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The project is organized into a clean and maintainable structure:
+
+```
+src
+├── assets
+│   └── images          # Icons and images
+├── components
+│   ├── Footer
+│   ├── TodoControls    # Component for adding and filtering todos
+│   └── TodoItem        # Component for a single todo item
+├── store
+│   └── todos.ts        # State management logic with Signals
+├── types
+│   └── index.ts        # TypeScript type definitions
+├── App.css
+├── App.tsx             # Main application component
+├── index.css           # Global styles
+└── main.tsx            # Application entry point
 ```
